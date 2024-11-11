@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@influxdata/influxdb-client": "npm:@influxdata/influxdb-client@^1.35.0",
+    "@influxdata/influxdb-client-apis": "npm:@influxdata/influxdb-client-apis@^1.35.0",
+    "@std/assert": "jsr:@std/assert@1"
+  }
+}
