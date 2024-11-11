@@ -7,11 +7,10 @@ const connect = async (
 ) => {
   const username = Deno.env.get("MQTT_USER") ?? null;
   const password = Deno.env.get("MQTT_PASS") ?? null;
-  const url = Deno.env.get("MQTT_URL") ?? null
+  const url = Deno.env.get("MQTT_URL") ?? null;
 
   if (!username || !password || !url) {
-    console.error("Missing env vars...", username, password, url);
-    Deno.exit(-1);
+    throw new Error("Env config missing... ");
   }
 
   client = new MqttClient({

@@ -15,8 +15,7 @@ const connect = () => {
   const bucket = Deno.env.get("INFLUX_BUCKET");
 
   if (!url || !token || !org || !bucket) {
-    console.error("Env config missing... ", url, token, org, bucket);
-    Deno.exit(-1);
+    throw new Error("Env config missing... ");
   }
 
   client = new InfluxDB({ url, token });
@@ -40,5 +39,5 @@ const writeDataSet = (dataSet: DataSet) => {
 
 export const Influx = {
   writeDataSet,
-  connect
-}
+  connect,
+};
